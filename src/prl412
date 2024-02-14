@@ -21,7 +21,10 @@ if __name__ == "__main__":
 
     elif args.query:
         from utils import moduls
-        moduls.search(args.query, facet=args.facet, limit=args.limit)
+        print ("[INFO] Realizando la consulta...")
+        response = moduls.search(args.query, facet=args.facet, limit=args.limit)
+        for counter, data in enumerate(response):
+            print (f"{counter+1}) {data} | {response[data]}")
     elif args.ip:
         from utils import moduls
         api_key = moduls.load_api_key()
@@ -35,5 +38,4 @@ if __name__ == "__main__":
         else:
             print ("Pon una API KEY con el parámetro '--api_key'.")
     else:
-        print (args)
         parser.print_help()

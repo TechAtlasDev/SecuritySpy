@@ -31,6 +31,8 @@ def ipquery(ip:str, key:str) -> dict:
     return json.dumps(DATA_IP)
 
 def search(query, facet="ip", limit=30):
+    DICTY = {}
+    
     URL = f"https://www.shodan.io/search/facet?query={query}&facet={facet}"
 
     header = {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -58,4 +60,5 @@ def search(query, facet="ip", limit=30):
         counter += 1
         data = container_data.find("strong").get_text()
         amount = container_amount.get_text()
-        print (f"{counter}) {data} | {amount}")
+        DICTY[data] = amount
+    return DICTY
