@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# THIS SYSTEM WAS CREATED FOR NON-ILLEGAL PROPOSES
+import argparse
+
+parser = argparse.ArgumentParser(description="PRL412 es un script diseñado para realizar consultas al sistema de Shodan a través de un Bypass que scrapea el apartado de las facetas, lo cual obtiene los mismos datos que en la API oficial.")
+parser.add_argument("--query", "-q", type=str, help="Realizar una consulta a través del Bypass.")
+parser.add_argument("--limit", "-l", type=int, help="Indica un límite de datos que se procesarán por consulta. (max: 1000) (default: 30)", default=30)
+parser.add_argument("--facet", "-f", type=str, help="Los datos que va a buscar. (default: ip)", default="ip")
+parser.add_argument("--template", "-T", type=str, help="Indica una plantilla para mostrar los resultados.", default="{counter}) {data} | {amount}")
+parser.add_argument("-ip", type=str, help="Realizar una consulta de la dirección IP usando la API oficial.")
+parser.add_argument("--output", "-o", type=int, help="Indica el formato en el que se va a mostrar el contenido.")
+parser.add_argument("--api_key", help="Clave de API para realizar consultas.")
+args = parser.parse_args()
+
+if __name__ == "__main__":
+    args = parser.parse_args()
+
+    if args.api_key:
+        from utils import moduls
+        moduls.save_api_key(args.api_key)
+
+    elif args.query:
+        from utils import moduls
+        moduls.search(args.query, facet=args.facet, limit=args.limit)
+    elif args.ip:
+        from utils import moduls
+        api_key = moduls.load_api_key()
+        if api_key:
+            if moduls.is_ip(args.ip):
+                import rich
+                ip_response = moduls.ipquery(args.ip, api_key)
+                rich.print_json(ip_response)
+            else:
+                print (f"{args.ip} no es una dirección IP.")
+        else:
+            print ("Pon una API KEY con el parámetro '--api_key'.")
+    else:
+        print (args)
+        parser.print_help()
