@@ -1,19 +1,19 @@
-![Image](prl412_banner.jpg)
+![Image](securityspy.png)
 ---
 
-<center><h1>The PRL412 project 💣</h1></center>
+<center><h1>Security Spy 💣</h1></center>
 
 ⚠️ Este sistema fué desarrollado <b>únicamente por fines educativos</b>, no me hago responsable por el el uso inadecuado y poco ético de quien lo use. 
 
 ## Descripción 📝
 
-PRL412 es un proyecto que se encarga de realizar <b>consultas a la página web oficial de Shodan</b> por medio del método GET a las facetas, con el objetivo de obtener hasta 1000 datos por cada consulta que se haga, lo que resulta ser una <i>alternativa a la API</i> de consultas de Shodan, facilitando la obtención de datos que en un momento, solo se podían obtener usando una API KEY.
+Security Spy es un proyecto que se encarga de realizar <b>consultas a la página web oficial de Shodan</b> por medio del método GET a las facetas, con el objetivo de obtener hasta 1000 datos por cada consulta que se haga, lo que resulta ser una <i>alternativa a la API</i> de consultas de Shodan, facilitando la obtención de datos que en un momento, solo se podían obtener usando una API KEY.
 
 <pre><code>
-usage: prl412 [-h] [--query QUERY] [--limit LIMIT] [--facet FACET]
+usage: Security Spy [-h] [--query QUERY] [--limit LIMIT] [--facet FACET]
               [--template TEMPLATE] [-ip IP] [--output OUTPUT] [--api_key API_KEY]
 
-PRL412 es un script diseñado para realizar consultas al sistema de Shodan a través
+Security Spy es un script diseñado para realizar consultas al sistema de Shodan a través
 de un Bypass que scrapea el apartado de las facetas, lo cual obtiene los mismos
 datos que en la API oficial.
 
@@ -41,7 +41,7 @@ Crear una alternativa gratuita a la <b>API de Shodan</b>, por medio de un scrape
 
 ## Funcionalidades 💡
 
-El sistema PRL412 cuenta con dos funcionalidades principales que buscan un enfoque gratuito y de calidad:
+El sistema Security Spy cuenta con dos funcionalidades principales que buscan un enfoque gratuito y de calidad:
 - <b>IPQuery:</b> Un sistema que se encarga de realizar consultas a la API de shodan (Es gratuito) con la API KEY del usuario.
 - <b>Search:</b> Un scraper que realiza la consulta automáticamente a la página de las facetas de shodan.
 
@@ -56,12 +56,12 @@ El sistema PRL412 cuenta con dos funcionalidades principales que buscan un enfoq
 Para instalar correctamente el script, sigue los siguientes pasos:
 
 1) Clonar este repositorio:
-    - <code>git clone https://github.com/TechAtlasDev/prl412</code>
+    - <code>git clone https://github.com/TechAtlasDev/SecuritySpy</code>
 
 <br>
 
 2) Entrar al directorio:
-    - <code>cd prl412</code>
+    - <code>cd Security Spy</code>
 
 <br>
 
@@ -71,13 +71,13 @@ Para instalar correctamente el script, sigue los siguientes pasos:
 
 <br>
 
-4) Instalar las dependencias y configurar el sistema PRL412:
+4) Instalar las dependencias y configurar el sistema Security Spy:
     - El setup es tan simple como poner el siguiente comando: <code>bash setup.sh</code>
 
 <br>
 
 5) Brindarle permisos de ejecución al sistema:
-    - <code>chmod +x src/prl412</code>
+    - <code>chmod +x src/Security Spy</code>
 
 ## Compatibilidad 🔨
 
@@ -93,6 +93,6 @@ Para instalar correctamente el script, sigue los siguientes pasos:
 |:------------:|:------------:|
 |   Español   |   ✅   |
 |   Ingles     |   ❌   |
-e
+
 ## Screenshot 📸
 ![Image](screenshot_sample.png)
